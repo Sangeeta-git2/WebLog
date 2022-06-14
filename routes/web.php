@@ -23,6 +23,10 @@ Route::get('delete_category/{category_id}',[App\Http\Controllers\Admin\CategoryC
 
 Route::get('posts',[App\Http\Controllers\Admin\PostController::class,'index']);
 Route::get('add_post',[App\Http\Controllers\Admin\PostController::class,'create']);
+Route::post('add_post',[App\Http\Controllers\Admin\PostController::class,'store']);
+Route::get('post/{post_id}',[App\Http\Controllers\Admin\PostController::class,'edit']);
+Route::put('update_post/{post_id}',[App\Http\Controllers\Admin\PostController::class,'update']);
+Route::get('delete_post/{post_id}',[App\Http\Controllers\Admin\PostController::class,'destroy']);
 
 
 });

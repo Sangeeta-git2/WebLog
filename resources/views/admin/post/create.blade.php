@@ -3,19 +3,29 @@
 @section('content')
 <div class="container-fluid px-4">
     <div class="card mt-4">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+          @foreach ($errors->all() as $error)
+             <div>{{$error}}</div>
+          @endforeach
+     </div>
+    @endif
+
         <div class="card-header">
+
             <h4>Add Posts
                 <a href="{{url('admin/add_post')}}" class="btn btn-primary float-end">Add posts</a>
             </h4>
         </div>
         <div class="card-body">
-           <form action="" method="POST">
+           <form action="{{url('admin/add_post')}}" method="POST">
+               @csrf
                <div class="mb-3">
                    <label for="">Category</label>
-                   <select name="" class="form-control">
-                      
-                       <option value=""></option>
-                      
+                   <select name="category_id" class="form-control">
+                      @foreach($category as $catitem)
+                       <option value="{{$catitem->id}}">{{$catitem->name}}</option>
+                      @endforeach
                    </select>
                </div>
                <div class="mb-3">
@@ -34,6 +44,7 @@
                    <label for="">Youtube Iframe Link</label>
                    <input type="text" name="yt_iframe" class="form-control" />
                </div>
+               <h6>SEO Tags</h6>
                <div class="mb-3">
                    <label for="">Meta Title</label>
                    <input type="text" name="meta_title" class="form-control" />
@@ -53,7 +64,7 @@
                    <div class="col-md-4">
                        <div class="mb-3">
                            <label for="">Status</label>
-                           <input type="checkbox" name="status" class="form-control" />
+                           <input type="checkbox" name="status"  />
                        </div>
                    </div>
                    <div class="col-md-8">
