@@ -1,11 +1,10 @@
 @extends('layouts.master')
-@section('title','View Posts')
+@section('title','View Users')
 @section('content')
 <div class="container-fluid px-4">
     <div class="card mt-4">
         <div class="card-header">
-            <h4>View Posts
-                <a href="{{url('admin/add_post')}}" class="btn btn-primary float-end">Add posts</a>
+            <h4>View Users
             </h4>
         </div>
         <div class="card-body">
@@ -16,26 +15,22 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Category</th>
-                        <th>Post Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
                         <th>Status</th>
                         <th>Edit</th>
-                        <th>Delete</th>
-
+                    
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($posts as $item)
+                    @foreach ($users as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->category->name}}</td>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->status== '1' ? 'Hidden' : 'Visible'}}</td>
+                        <td>{{$item->email}}</td>
+                        <td>{{$item->role_as== '1' ? 'Admin' : 'User'}}</td>
                         <td>
-                            <a href="{{url('admin/post/'.$item->id)}}" class="btn btn-success">Edit</a>
-                        </td>
-                        <td>
-                            <a href="{{url('admin/delete_post/'.$item->id)}}" class="btn btn-success"">Delete</a>
+                            <a href="{{url('admin/user/'.$item->id)}}" class="btn btn-success">Edit</a>
                         </td>
                     </tr>
                     @endforeach

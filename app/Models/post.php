@@ -20,10 +20,14 @@ class post extends Model
         'meta_description',
         'meta_keyword',
         'status',
-        'created by'
+        'created_by'
 
     ];
     public function category(){
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
+    public function user(){
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
 }
