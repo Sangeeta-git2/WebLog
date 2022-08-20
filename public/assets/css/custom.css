@@ -35,3 +35,12 @@
     width: 38px !important;
 
 }
+.underline{
+    height: 3px;
+    width: 60px;
+    background-color: #e71212 !important;
+    margin-bottom: 10px;
+}
+.bg-gray{
+    background-color: #ddd;
+}

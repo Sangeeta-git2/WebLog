@@ -26,4 +26,79 @@
        </div>
    </div>
 </div>
+<div class="py-1 bg-gray">
+    <div class="container">
+        <div class="border p-3 text-center">
+            <h3>Advertise Here</h3>
+        </div>
+    </div>
+</div>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Programming Learners</h4>
+                <div class="underline"></div>
+                    <p> ipsum dolor sit amet consectetur adipisicing elit.
+                     Cumque dolor itaque recusandae vel eligendi voluptate delectus at harum 
+                     asperiores quod hic nisi rerum aperiam sint non illo, sapiente officiis tenetur.ipsum dolor sit amet consectetur adipisicing elit.
+                     Cumque dolor itaque recusandae vel eligendi voluptate delectus at harum 
+                     asperiores quod hic nisi rerum aperiam sint non illo, sapiente officiis tenetur.ipsum dolor sit amet consectetur adipisicing elit.
+                     Cumque dolor itaque recusandae vel eligendi voluptate delectus at harum 
+                     asperiores quod hic nisi rerum aperiam sint non illo, sapiente officiis tenetur.</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-5 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>All Categories</h4>
+                <div class="underline"></div>
+            </div>
+            @foreach($all_categories as $catitem)
+            <div class="col-md-3">
+                    <div class="card card-body mb-3">
+                        <a href="{{url('tutorial/'.$catitem->slug)}}" class="text-decoration-none">
+                        <h5 class="text-dark mb-0">{{$catitem->name}}</h5>
+                        </a>
+                    </div>
+                    </div>
+                    @endforeach
+        </div>
+    </div>
+</div>
+
+<div class="py-5 bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Latest Posts</h4>
+                <div class="underline"></div>
+            </div>
+            <div class="col-md-8">
+                @foreach($latest_posts as $item)
+
+                    <div class="card card-body mb-3 bg-gray shadow">
+                        <a href="{{url('tutorial/'.$item->category->slug.'/'.$item->slug)}}" class="text-decoration-none">
+                        <h5 class="text-dark mb-0">{{$item->name}}</h5>
+                        </a>
+                        <h6>Posted On:{{$item->created_at->format('d-m-Y')}}</h6>
+                    </div>
+               @endforeach
+           </div>
+                   
+                <div class="col-md-4">
+                <div class="border p-3 text-center">
+            <h3>Advertise Here</h3>
+        </div>
+                </div>
+      </div>
+            
+    </div>
+</div>
+
 @endsection
