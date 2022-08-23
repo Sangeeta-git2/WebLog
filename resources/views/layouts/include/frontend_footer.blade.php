@@ -35,8 +35,7 @@
         <p class="mb-0">
             &copy;Copyright at <a href="https://wwww.ProgrammingLearners.com/">Programming Learners</a>
             All right reserved.
-            Designed and developed by Programming Learners {{date('d-m-Y')}}.
-
+            Designed and developed by Programming Learners 2022.
         </p>
     </div>
 

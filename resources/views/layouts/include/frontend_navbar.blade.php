@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-9 my-auto">
                 <div class="border text-center p-2">
-                <h5>Advertise here</h5>
+                <h5>Advertise Here</h5>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', "Programming learner")
+@section('title', "Programming learners")
 @section('meta_description', "Programming learner")
 @section('meta_keyword', "Programming learner")
 
@@ -87,6 +87,7 @@
                         <h5 class="text-dark mb-0">{{$item->name}}</h5>
                         </a>
                         <h6>Posted On:{{$item->created_at->format('d-m-Y')}}</h6>
+                        <h6>Posted By:{{$item->user->name}}</h6>
                     </div>
                @endforeach
            </div>
