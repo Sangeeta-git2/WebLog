@@ -35,7 +35,8 @@
            @if (session('message'))
            <div class="alert alert-success">{{session('message')}}</div>
            @endif
-           <table id="myTable" class="table table-bordered">
+           <div class="table-responsive">
+               <table id="myTable" class="table table-bordered">
                <thead>
                    <tr>
                        <th>ID</th>
@@ -66,7 +67,8 @@
                    @endforeach
                </tbody>
 
-           </table>
+               </table>
+           </div>
        </div>
         
     </div>

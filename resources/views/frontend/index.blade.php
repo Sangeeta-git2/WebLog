@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', "Programming learners")
-@section('meta_description', "Programming learner")
-@section('meta_keyword', "Programming learner")
+@section('title', "$setting->meta_title")
+@section('meta_description', "$setting->meta_description")
+@section('meta_keyword', "$setting->meta_keyword")
 
 @section('content')
-<div class="bg-danger py-5">
+<div class="bg-secondary py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

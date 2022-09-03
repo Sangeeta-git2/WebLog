@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<div class="py-5">
+    @if(session('message'))
+      <h5 class="alert alert-warning mb-3">{{session('message')}}</h5>
+    @endif
+
+
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -68,6 +75,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 @endsection

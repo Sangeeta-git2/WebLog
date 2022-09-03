@@ -1,8 +1,13 @@
-<div class="global-navbar">
+<div class="global-navbar bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <img src="{{asset('assets/images/logo.jpg')}}" class="w-100" alt="logo">
+            <div class="col-md-3 d-none d-sm-none d-md-inline">
+                @php
+                $setting = App\Models\Setting::find(1);
+                @endphp
+                @if($setting)
+                <img src="{{asset('uploads/settings/'.$setting->logo)}}" class="w-100" alt="logo">
+                @endif
 
             </div>
             <div class="col-md-9 my-auto">
@@ -14,8 +19,14 @@
         </div>
 
     </div>
+</div>
+<div class="sticky-top">
+
     <nav class="navbar navbar-expand-lg navbar-light bg-blue">
       <div class="container">
+        <a href="" class="navbar-brand d-inline d-sm-inline d-md-none">
+        <img src="{{asset('assets/images/logo.jpg')}}" style="width:140px;" alt="logo">
+        </a>
     
              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,12 +57,21 @@
                       <a class="nav-link" href="{{ url('tutorial/'.$item->slug)}}">{{ $item->name}}</a>
                   </li>
                   @endforeach
-
                   
+                  @if(Auth::check())
+                      <li>
+                            <a class="nav-link btn-danger" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                Logout
+                           </a>
+                             <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
+                                 @csrf
+                              </form>
+                        </li>
+
+                  @endif
               </ul>
       
           </div>
       </div>
    </nav>
-
-</div>
+   </div>

@@ -33,6 +33,18 @@
        display: inline-block;
        width: 50%;
       }
+      .post-code-bg
+      {
+        width: fit-content;
+        min-width: 100%;
+        background-color: #212121 !important;
+        width: 100% !important;
+        position: relative;
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+      }
      </style>
      
 </head>

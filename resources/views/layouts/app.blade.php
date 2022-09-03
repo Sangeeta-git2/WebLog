@@ -10,6 +10,13 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('meta_keyword')">
+
+   @php
+     $setting = App\Models\Setting::find(1);
+@endphp
+ @if($setting)
+       <link rel="shortcut icon" href="{{asset('uploads/settings/'.$setting->favicon)}}" type="image/x-icon">
+ @endif
     
 
     
@@ -51,7 +58,7 @@
           dots:false,
           responsive:{
               0:{
-              items:1
+              items:2
               },
              600:{
              items:3
@@ -62,6 +69,7 @@
     }
 })
     </script>
+    @yield('scripts')
 
 
 
